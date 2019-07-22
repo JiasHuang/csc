@@ -1,0 +1,50 @@
+<root>
+
+<options>
+
+    <option>
+        <name>input</name>
+        <ctype>char*</ctype>
+        <has_arg>required_argument</has_arg>
+        <usage>-i, --input file</usage>
+        <desc>input file</desc>
+    </option>
+
+    <option>
+        <name>output</name>
+        <ctype>char*</ctype>
+        <has_arg>required_argument</has_arg>
+        <usage>-o, --output file</usage>
+        <desc>output file</desc>
+    </option>
+
+    <option>
+        <name>width</name>
+        <ctype>int</ctype>
+        <has_arg>required_argument</has_arg>
+        <usage>-w, --width number</usage>
+	<default>1920</default>
+        <desc>width</desc>
+    </option>
+
+    <option>
+        <name>height</name>
+        <ctype>int</ctype>
+        <has_arg>required_argument</has_arg>
+        <usage>-h, --height number</usage>
+	<default>1080</default>
+        <desc>height</desc>
+    </option>
+
+    <option>
+        <name>task</name>
+        <ctype>char*</ctype>
+        <has_arg>required_argument</has_arg>
+        <usage>-t, --task taskname</usage>
+	<default>yuv420p10be_to_nv12_10bit</default>
+        <desc>taskname</desc>
+    </option>
+
+</options>
+
+</root>
