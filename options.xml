@@ -13,6 +13,7 @@
     <option>
         <name>output</name>
         <ctype>char*</ctype>
+        <array>3</array>
         <has_arg>required_argument</has_arg>
         <usage>-o, --output file</usage>
         <desc>output file</desc>
@@ -41,7 +42,7 @@
         <ctype>char*</ctype>
         <has_arg>required_argument</has_arg>
         <usage>-t, --task taskname</usage>
-	<default>yuv420p10be_to_nv12_10bit</default>
+	<default>yuv420p10be_to_nv12_10b</default>
         <desc>taskname</desc>
     </option>
 

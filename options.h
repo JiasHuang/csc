@@ -13,7 +13,7 @@ enum {
 typedef struct {
     char* input;
     int   input_cnt;
-    char* output;
+    char* output[3];
     int   output_cnt;
     int   width;
     int   width_cnt;
@@ -41,7 +41,7 @@ static void printUsage ()
     printf("\t-o, --output file   : output file\n");
     printf("\t-w, --width number  : width (Default: 1920)\n");
     printf("\t-h, --height number : height (Default: 1080)\n");
-    printf("\t-t, --task taskname : taskname (Default: yuv420p10be_to_nv12_10bit)\n");
+    printf("\t-t, --task taskname : taskname (Default: yuv420p10be_to_nv12_10b)\n");
 }
 
 static void parseArgs(opts_t *opts, int argc, char **argv)
@@ -56,7 +56,7 @@ static void parseArgs(opts_t *opts, int argc, char **argv)
                 break;
             case 'o':
             case OPT_OUTPUT:
-                opts->output = optarg;
+                if (opts->output_cnt < 3) opts->output[opts->output_cnt] = optarg;
                 opts->output_cnt++;
                 break;
             case 'w':
@@ -85,6 +85,6 @@ static void parseArgs(opts_t *opts, int argc, char **argv)
 opts_t opts = {
     .width = 1920,
     .height = 1080,
-    .task = "yuv420p10be_to_nv12_10bit",
+    .task = "yuv420p10be_to_nv12_10b",
 };
 
