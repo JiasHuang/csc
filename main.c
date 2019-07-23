@@ -41,6 +41,10 @@ static void* yuv420p10be_to_nv12_10b(void *src, int width, int height, int *plan
 	dst = malloc(bufsize);
 	buf = dst;
 
+	*planeCnt = 2;
+	planeSizes[0] = width * height * 5 / 4;
+	planeSizes[1] = width * (height >> 1) * 5 / 4;
+
 	for (h=0; h<height; h++) {
 		for (w=0; w<width; w+=4) {
 			y0 = srcY[0] << 8 | srcY[1];
@@ -75,10 +79,6 @@ static void* yuv420p10be_to_nv12_10b(void *src, int width, int height, int *plan
 			buf += 5;
 		}
 	}
-
-	*planeCnt = 2;
-	planeSizes[0] = width * height * 5 / 4;
-	planeSizes[1] = width * (height >> 1) * 5 / 4;
 
 	return dst;
 }
